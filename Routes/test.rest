@@ -1,0 +1,17 @@
+#User Sign Up
+POST http://localhost:8080/api/user/sign-up
+Content-Type: application/json
+
+{
+    "firstName": "Fawaz",
+    "lastName": "Odesanya",
+    "telephone": "09059595959",
+    "email": "fawaz@test.com",
+    "referral_code": "body.referral_code"
+}
+
+###
+GET http://localhost:8080/api/entry
+
+###
+GET http://localhost:8080/
