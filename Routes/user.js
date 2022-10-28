@@ -9,7 +9,7 @@ router.post("/sign-up" , celebrate({
         lastName: Joi.string().required(),
         email: Joi.string().required().email(),
         telephone: Joi.string().required(),
-        referral_code: Joi.string().required()
+        referral_code: Joi.string()
     })
 }), userController.SignUp)
 

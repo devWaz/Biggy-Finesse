@@ -1,13 +1,12 @@
 import express, { urlencoded } from "express";
 const app = express();
-import dotenv from "dotenv";
-dotenv.config();
 import morgan from "morgan";
-import cors from "cors"
+import cors from "cors";
 import connect from "./db/connection.js";
 import entry from "./Routes/entry.js";
 import server from "./Routes/server.js";
 import user from "./Routes/user.js";
+import { errors } from "celebrate";
 
 
 // MiddleWares
@@ -28,6 +27,7 @@ app.use("" , server);
 app.use("/api/user" , user);
 app.use("/api/entry" , entry);
 
+app.use(errors())
 
 const PORT = 8080;
 app.listen(PORT , () => {

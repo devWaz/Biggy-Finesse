@@ -1,6 +1,7 @@
 import User from "../Models/user.js";
 import Entry from "../Models/entry.js";
 
+//Creating Users
 export const SignUp = async (req, res) => {
     try {
         const body = req.body
@@ -37,13 +38,13 @@ export const SignUp = async (req, res) => {
             lastName: body.lastName,
             telephone: body.telephone,
             email: body.email,
-            referral_code: body.referral_code,
+            referral_code: referralCode,
         })
 
         //Create Entry
         await Entry.create({
             user: user._id,
-            referral_code: referral.referralCode,
+            referral_code: referralCode,
             referee: user._id
         })
 

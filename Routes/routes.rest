@@ -6,12 +6,11 @@ Content-Type: application/json
     "firstName": "Fawaz",
     "lastName": "Odesanya",
     "telephone": "09059595959",
-    "email": "fawaz@test.com",
-    "referral_code": "body.referral_code"
+    "email": "fawaz@test.com"
 }
 
 ###
-GET http://localhost:8080/api/entry
+GET http://localhost:8080/api/entry/winners/list
 
 ###
 GET http://localhost:8080/
