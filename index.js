@@ -33,6 +33,7 @@ app.all("/*" , (req , res , next) => {
 
 //View Engine
 app.set('view engine' , 'ejs');
+app.set('views', path.join(__dirname, './Views'));
 
 app.use("/css" , express.static(path.resolve(__dirname, "assests/css/style.css")));
 app.use("/js" , express.static(path.resolve(__dirname, "assests/js/script.js")));
