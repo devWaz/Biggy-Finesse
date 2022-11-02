@@ -110,3 +110,13 @@ td {
     border: none;
     font-weight: 700;
 }
+
+.success {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: large;
+}
