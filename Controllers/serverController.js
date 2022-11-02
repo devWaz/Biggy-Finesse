@@ -4,5 +4,5 @@ export const index = async (req , res) => {
         referralCode = req.query.referral_code
     }
 
-    return res.status(200).render("index" , {referralCode})
+    return res.status(200).render("index.ejs" , {referralCode})
 }
