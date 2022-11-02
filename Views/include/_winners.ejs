@@ -1,0 +1,23 @@
+<div class="container">
+
+    <h1>WINNERS LIST</h1>
+    <table>
+        <tr>
+            <th class="firstName">FIRST NAME</th>
+            <th class="lastName">LAST NAME</th>
+            <th class="email">EMAIL</th>
+            <th class="entries">ENTRIES</th>
+            <th class="referral_codes">REF. CODE</th>
+        </tr>
+        
+        <% entries.forEach(entry => {%>
+            <tr>
+                <td><%=entry.user.firstName%></td>
+                <td><%=entry.user.lastName%></td>
+                <td><%=entry.user.email%></td>
+                <td><%=entry.no_of_entries%></td>
+                <td><%=entry.user.referral_code%></td>
+            </tr>
+        <% }) %>
+    </table>
+</div>

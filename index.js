@@ -7,6 +7,15 @@ import entry from "./Routes/entry.js";
 import server from "./Routes/server.js";
 import user from "./Routes/user.js";
 import { errors } from "celebrate";
+import dotenv from "dotenv";
+import path from "path";
+dotenv.config({path: "config.env"});
+
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 
 // MiddleWares
@@ -22,6 +31,12 @@ app.all("/*" , (req , res , next) => {
     next()
 })
 
+//View Engine
+app.set('view engine' , 'ejs');
+
+app.use("/css" , express.static(path.resolve(__dirname, "assests/css/style.css")));
+app.use("/js" , express.static(path.resolve(__dirname, "assests/js/script.js")));
+
 // Routes
 app.use("" , server);
 app.use("/api/user" , user);
@@ -29,7 +44,8 @@ app.use("/api/entry" , entry);
 
 app.use(errors())
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080
+
 app.listen(PORT , () => {
     connect()
     console.log(`Server Started at port ${PORT}`);

@@ -40,12 +40,8 @@ export const listWinners = async (req , res) => {
         ]
 
         const entries = await Entry.aggregate(pipeline)
-
-        return res.status(200).json({
-            error: false,
-            message: "Winners List",
-            data: entries,
-        })
+        console.log(entries);
+        return res.status(200).render("winners", {entries})
     }
     catch (err) {
         res.status(500).json({

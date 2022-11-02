@@ -1,6 +1,8 @@
 export const index = async (req , res) => {
-    return res.status(200).json({
-        error: false,
-        message: "Server Active"
-    })
+    let referralCode = ""
+    if (req.query.referral_code){
+        referralCode = req.query.referral_code
+    }
+
+    return res.status(200).render("index" , {referralCode})
 }

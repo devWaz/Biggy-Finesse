@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="register-form">
+        <h1>BIGGY REFERRAL SYSTEM</h1>
+        <a href="/api/entry/winners/list"><button class="winners">Winners</button></a>
+        <form method="post" action="/api/user/sign-up">
+            <div>
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName">
+            </div>
+            <div>
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName">
+            </div>
+            <div>
+                <label for="telephone">Phone No.</label>
+                <input type="text" name="telephone">
+            </div>
+            <div>
+                <label for="email">E-mail</label>
+                <input type="text" name="email">
+            </div>
+            <div>
+                <label for="referral_code">Referral Code</label>
+                <%if (referralCode == "") {%>
+                <input type="text" name="referral_code">
+                <% } else {%> 
+                    <input type="text" name="referral_code" value="<%=referralCode%>" >
+                    <% } %> 
+            </div>
+            <button>ADD</button>
+        </form>
+    </div>
