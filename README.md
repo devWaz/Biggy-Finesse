@@ -1,10 +1,12 @@
 # Finesse Codes Task
-Endpoints can be tested with Postman or Rest Client(I added a file in the routes folder - routes.rest)
+A sign up form that consists of the following compulsory fields: First
+name, Last name, Mobile Number and Email Address.
+When people arrive to the competition page via the special link and
+signs up the form. The original poster will get one more extra entry for
+the competition.
+After the competition has expired, view the list of winners.
 
-### Endpoint to Sign up 
-Users can sign up with or without a referral code
-http://localhost:8080/api/user/sign-up
+### Live Link 
+https://biggyfineseecode.herokuapp.com/
 
-### Endpoint to check winners list
-Winner will be displayed at the top of the list
-http://localhost:8080/api/entry/winners/list
+
