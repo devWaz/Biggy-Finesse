@@ -39,9 +39,8 @@ export const listWinners = async (req , res) => {
             },
         ]
 
-        const entries = await Entry.aggregate(pipeline)
-        console.log(entries);
-        return res.status(200).render("winners", {entries})
+        const entries = await Entry.aggregate(pipeline);
+        return res.status(200).render("winners", {entries , base_url: process.env.BASE_URL})
     }
     catch (err) {
         res.status(500).json({

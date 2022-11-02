@@ -57,7 +57,10 @@ export const SignUp = async (req, res) => {
         })
         }
 
-        return res.status(201).render("successful")
+        const referralLink = process.env.BASE_URL + `?referral_code=${referralCode}`
+        return res.status(201).render("success" , {
+            message : "User Created Successfully!" ,
+            referral_link : referralLink})
     } 
     catch (err) {
         res.status(500).json({

@@ -64,6 +64,7 @@ form button {
 table {
     border: 1px solid black;
     width: 70vw;
+    margin-top: 5rem;
     border-collapse: collapse;
 }
 

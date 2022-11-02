@@ -16,7 +16,7 @@
                 <td><%=entry.user.lastName%></td>
                 <td><%=entry.user.email%></td>
                 <td><%=entry.no_of_entries%></td>
-                <td><%=entry.user.referral_code%></td>
+                <td><a href="<%= base_url %>?referral_code=<%= entry.user.referral_code %> "><%=entry.user.referral_code%></a></td>
             </tr>
         <% }) %>
     </table>
