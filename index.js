@@ -6,7 +6,6 @@ import connect from "./db/connection.js";
 import entry from "./Routes/entry.js";
 import server from "./Routes/server.js";
 import user from "./Routes/user.js";
-import { errors } from "celebrate";
 import dotenv from "dotenv";
 import path from "path";
 dotenv.config({path: "config.env"});
@@ -42,8 +41,6 @@ app.use("/js" , express.static(path.resolve(__dirname, "assests/js/script.js")))
 app.use("" , server);
 app.use("/api/user" , user);
 app.use("/api/entry" , entry);
-
-app.use(errors())
 
 const PORT = process.env.PORT || 8080
 
